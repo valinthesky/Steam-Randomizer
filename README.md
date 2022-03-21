@@ -12,7 +12,7 @@ Actually not working
 
 # Getting Started
 
-1-You need [Requests](https://pypi.org/project/requests/)
+1-You need [Requests](https://pypi.org/project/requests/) and [SteamID API](https://github.com/smiley/steamapi/)
 
 2-Then you just need your ids
 
