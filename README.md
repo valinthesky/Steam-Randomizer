@@ -1,19 +1,18 @@
 # Steam-Randomizer
-This program pick games who are already installed in your library and randomly choose one
+This program pick games who are in your library and randomly choose one
 
 # Features
-Actually not working
 
--User can type is AUTH key and the program display informations. ✅ 
+-The program take all the appids of the user's library and then convert them into the games name . ✅ 
 
--The program randomize games download in the steam library of the user and pick one. ❌
+-Pick a game randomly ✅
 
--The game is launch from is id. ❌
+-The game is launch from is id (choice of the user). ❌
 
 # Getting Started
 
-1-You need [Requests](https://pypi.org/project/requests/) and [SteamID API](https://github.com/smiley/steamapi/)
+1-You need [Requests](https://pypi.org/project/requests/) and [Steamfront](https://pypi.org/project/steamfront/)
 
-2-Then you just need your ids
+2-Then you just need your ids([Api key](https://steamcommunity.com/dev/apikey) & [id64](https://steamid.io/lookup/)
 
 Have fun :3
