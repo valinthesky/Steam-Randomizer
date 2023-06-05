@@ -7,7 +7,7 @@ This program pick games who are in your library and randomly choose one
 
 -Pick a game randomly ✅
 
--The game is launch from is id (choice of the user). ❌
+-The game is launch from is id (choice of the user). ✅
 
 # Getting Started
 
