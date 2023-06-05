@@ -1,18 +1,9 @@
-import steamfront
-import requests
-import random
-import time
-from steam.steamid import SteamID
-from decouple import config
-from steam.webapi import WebAPI
-from steam.client.user import SteamUser
-from steam.client.builtins.user import User
-from steam.client import SteamClient
-from steam.enums.emsg import EMsg
+import steamfront, requests, random, time, os
 from Loading import animation
 
 API = str(input("API key :"))
 id64Steam = str(input("id64 :"))
+os.system('cls||clear')
 
 # Get the list from the API
 SteamList = 'http://api.steampowered.com/ISteamApps/GetAppList/v0001/' 
@@ -23,29 +14,41 @@ jsonGames = dictGames.json()
 AllgameList = jsonGames["applist"]["apps"]["app"]
 
 
-#client = SteamClient()           we can possibly add features with this 
 clientGame = steamfront.Client(API)
 
 user = clientGame.getUser(id64=id64Steam)
 apps = user.raw_apps  # Steam games of the user
 userList = [None] * len(apps)
 
-#client.cli_login() 
+ChooseGame = None
 
-#print("Logged on as: %s" % client.user.name)
+while ChooseGame == None : # Some games in the library may not be in the actual steam database
+    for i in range(len(apps)):
+        userList[i] = apps[i]["appid"]
+    # Now we got the list with all the appid from all the games of the user (in userList)
 
-for i in range(len(apps)):
-    userList[i] = apps[i]["appid"]
-# Now we got the list with all the appid from all the games of the user (in userList)
+    ChooseGameID = random.choice(userList)
 
-for id in range(len(userList)):
-    for k in range(len(AllgameList)):
-        if AllgameList[k]["appid"] == userList[id] :     # <----- we convert appid into names from the database
-            userList[id] = AllgameList[k]["name"]
-# Now we got the list of names from the game library of the user
+    for id in range(len(userList)):
+        for k in range(len(AllgameList)):
+            if AllgameList[k]["appid"] == ChooseGameID :     # <----- we convert appid into a name from the database
+                ChooseGame = AllgameList[k]["name"]
 
 animation() # Animation with the moving bars
 
-print("Game :",random.choice(userList),"!")
+print("Game :",ChooseGame,"!")
 
-#client.logout()
+while True:
+    response = str(input("Do you wanna launch the game ? (y/n): "))
+    if response == "y":
+        os.system('cmd /c start steam://rungameid/{}'.format(ChooseGameID))
+        time.sleep(3)
+        break
+    elif response == "n":
+        print("Goodbye !")
+        break
+    else : 
+        os.system('cls||clear')
+        print("Please enter (y/n)...")
+
+
