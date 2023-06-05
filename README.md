@@ -1,5 +1,5 @@
 # Steam-Randomizer
-This program pick games who are in your library and randomly choose one
+This program pick games which are in your library and randomly choose one
 
 # Features
 
