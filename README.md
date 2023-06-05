@@ -13,6 +13,6 @@ This program pick games who are in your library and randomly choose one
 
 1-You need [Requests](https://pypi.org/project/requests/) and [Steamfront](https://pypi.org/project/steamfront/)
 
-2-Then you just need your ids([Api key](https://steamcommunity.com/dev/apikey) & [id64](https://steamid.io/lookup/)
+2-Then you just need your ids ( [Api key](https://steamcommunity.com/dev/apikey) & [id64](https://steamid.io/lookup/) )
 
 Have fun :3
